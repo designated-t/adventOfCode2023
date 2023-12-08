@@ -5,11 +5,10 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Part1 {
+public class Part1and2 {
 
     // Change SOLVE_FOR_PART_2 to false to solve for part 1
     private static final boolean SOLVE_FOR_PART_2 = true;
-
 
 
     private static StringBuilder lineVerboseRegex;
@@ -81,15 +80,14 @@ public class Part1 {
 
         if (SOLVE_FOR_PART_2) {
 
-
             Matcher matcher = Pattern.compile(lineVerboseRegex.toString()).matcher(line);
-            System.out.println(line);
+
             line = "";
             int index = 0;
 
             while (matcher.find(index)) {
-                String occurence = matcher.group();
-                line += occurence;
+                String occurrence = matcher.group();
+                line += occurrence;
 
                 // required to advance once from start due to there being edge cases such as "oneight"
                 // this allows for the matcher to find a match after "n", instead of "i" like by default
@@ -98,7 +96,6 @@ public class Part1 {
                 // "|" represents the start of match finder
                 index = matcher.start() + 1;
             }
-
 
             for (Map.Entry<String, String> entry : numbersVerboseToNumeric.entrySet()) {
                 line = line.replaceAll("(" + entry.getKey() + ")", entry.getValue());
