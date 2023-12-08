@@ -9,8 +9,8 @@ import java.util.regex.Pattern;
 public class Part1 {
 
     private static BufferedReader reader;
-    private static Pattern numberRegex = Pattern.compile("([0-9][0-9][0-9])|([0-9][0-9])|([0-9])");
-    private static Pattern symbolRegex = Pattern.compile("[^0-9.]");
+    private static final Pattern numberRegex = Pattern.compile("([0-9][0-9][0-9])|([0-9][0-9])|([0-9])");
+    private static final Pattern symbolRegex = Pattern.compile("[^0-9.]");
     private static int sumOfParts = 0;
 
     // read line.
